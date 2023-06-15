@@ -1,0 +1,47 @@
+.content {
+    width: 80%;
+    margin: var(--height-header) auto 0;
+    padding: 60px 0;
+
+    .singer-wrapper {
+
+        .singer-heading {
+            font-size: 4rem;
+            font-weight: 300;
+            font-family: 'Futara';
+        }
+
+        .singer-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+
+            .singer-item {
+                padding: 30px;
+
+                .singer-item-link {
+
+                    img {
+                        width: 170px;
+                        height: 170px;
+                        margin-bottom: 18px;
+                        padding: 2px;
+                        border-radius: 50%;
+                        border: 2px solid var(--black-color);
+                        object-fit: cover;
+    
+                    }
+    
+                    p {
+                        font-size: 1.8rem;
+                        font-weight: 600;
+                        text-align: center;
+                    }
+                }
+            }
+
+        }
+    }
+
+}

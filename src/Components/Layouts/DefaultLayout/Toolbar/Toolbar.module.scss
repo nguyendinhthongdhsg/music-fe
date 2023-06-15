@@ -1,0 +1,178 @@
+
+.wrapper {
+    width: 100%;
+    height: var(--height-toolbar);
+    position: fixed;
+    bottom: calc(-1 * var(--height-toolbar));
+    left: 0;
+    z-index: 3;
+    background-color: var(--white-color);
+    opacity: 0;
+    transition: bottom 0.5s linear, opacity 0.8s linear ;
+
+    .tool-source {
+        display: none;
+    }
+
+    .player-controls {
+        width: 80%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+
+        .player-controls-left {
+            width: 30%;
+
+            .tool-info {
+                width: 100%;
+                display: none;
+                align-items: center;
+                .tool-info-img {
+                    width: calc(var(--height-toolbar) - 20px);
+                    height: calc(var(--height-toolbar) - 20px);
+                    border-radius: 50%;
+                    margin-right: 14px;
+                }
+
+                .tool-info-music {
+                    width: 70%;
+
+                    h4 {
+                        width: 100%;
+                        font-size: 1.6rem;
+                        font-weight: 500;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                    }
+
+                    .tool-info-music-music {
+                        margin-bottom: 6px;
+                    }
+
+                    .tool-info-music-singer {
+                        font-size: 1.4rem;
+                        color: #7b7b7b;
+                    }
+                }
+            }
+        }
+
+        .player-controls-center {
+            flex: 3;
+
+            .player-controls-center-action {
+                width: 100%;
+                margin: 8px 0;
+
+                .player-controls-center-action-list {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .player-controls-center-action-item {
+                        margin: 0 12px;
+                        width: 30px;
+                        height: 30px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        i {
+                            font-size: 2rem;
+                        }
+
+                        .btn-right {
+                            transform: rotate(0.5turn);
+                        }
+
+                        &:hover {
+                            background-color: var(--grey-color);
+                        }
+
+                        &.center {
+                            width: 40px;
+                            height: 40px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 50%;
+                            border: 2.5px solid var(--black-color);
+
+                            .btn-center {
+                                position: relative;
+                                right: -1.5px;
+                                font-size: 2.4rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .player-controls-center-line {
+                display: flex;
+                align-items: center;
+
+                span {
+                    font-size: 1.4rem;
+                    color: grey;
+
+                    &:last-child {
+                        color: var(--black-color);
+                    }
+                }
+
+                input {
+                    flex: 1;
+                    appearance: none;
+                    height: 6px;
+                    margin: 0 12px;
+                    background-color: var(--black-color);
+                    outline: none;
+                    border-radius: 4px;
+                    transition: opacity 0.2s;
+                    opacity: 0.8;
+                    cursor: pointer;
+                    &::-webkit-slider-thumb {
+                        -webkit-appearance: none;
+                        appearance: none;
+                        width: 12px;
+                        height: 4px;
+                        background: red;
+                    }
+                    &::-moz-range-thumb {
+                        width: 12px;
+                        height: 4px;
+                        background: red;
+                    }
+
+                    &:hover {
+                        height: 8px;
+                        opacity: 1;
+                        &::-webkit-slider-thumb {
+                            -webkit-appearance: none;
+                            appearance: none;
+                            width: 15px;
+                            height: 15px;
+                            border-radius: 50%;
+                            background: red;
+                        }
+                        &::-moz-range-thumb {
+                            width: 15px;
+                            height: 15px;
+                            border-radius: 50%;
+                            background: red;
+                        }
+                    }
+                }
+            }
+        }
+
+        .player-controls-right {
+            flex: 2;
+
+        }
+    }
+}

@@ -1,0 +1,58 @@
+
+:root {
+    // color
+    --primary-color: #1f1f1f;
+    --white-color: #fff;
+    --black-color: #000;
+    --grey-color: #e5e5e5;
+    --border-color: #e1e1e1;
+    --box-shadow-color: #7f7f7f;
+    --placeholder-color: #555;
+    --message-upload-done: #60e777;
+    --message-upload-false: #e93f3f;
+    --btn-link-page-color: #2daaed;
+    // height
+    --height-header: 57px;
+    --height-toolbar: 90px;
+
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-y: scroll;
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    background-color: var(--white-color);
+    color: var(--black-color);
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: var(--black-color);
+    text-decoration: none;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
