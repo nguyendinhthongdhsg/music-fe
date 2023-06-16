@@ -31,6 +31,7 @@ function Header() {
 
     function onSearch() {
         document.onclick = () => {
+            document.querySelector('#loading').style.display = 'unset';
             setListMusic([]);
             document.onclick = '';
         }

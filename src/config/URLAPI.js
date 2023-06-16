@@ -1,3 +1,3 @@
-const URLAPI = 'http://localhost:8000';
+const URLAPI = 'https://music-be-t40w.onrender.com';
 
 export default URLAPI;
