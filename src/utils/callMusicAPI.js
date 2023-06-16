@@ -29,7 +29,7 @@ function downloadMusic(event) {
     while(!event.id)
         event = event.parentElement;
     axios({
-        url: 'http://localhost:8000/fileMusic/' + event.id,
+        url: URLAPI + '/fileMusic/' + event.id,
         method: 'GET',
         responseType: 'blob',
     })
