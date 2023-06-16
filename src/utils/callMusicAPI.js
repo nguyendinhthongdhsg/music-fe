@@ -1,8 +1,9 @@
 import axios from "axios";
+import URLAPI from '../config/URLAPI';
 
 function callMusicAPI(event) {
     axios({
-        url: 'http://localhost:8000/fileMusic/' + event.id,
+        url: URLAPI + '/fileMusic/' + event.id,
         method: 'GET',
         responseType: 'blob',
     })
