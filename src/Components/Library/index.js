@@ -55,11 +55,13 @@ function Library() {
             event = event.parentElement;
         if(event) {
             const listFake = [...listMusic];
-            const listLocal = JSON.parse(localStorage.getItem('listMusic'));
+            const listLocal = [];
             listFake.splice(event.id, 1);
-            setListMusic(listFake);
-            listLocal.splice(event.id, 1);
+            const length = listFake.length;
+            for(let i = 0; i < length; i++)
+                listLocal.push(listFake[i].musicId);
             localStorage.setItem('listMusic', JSON.stringify(listLocal));
+            setListMusic(listFake);
         }
     }
 
