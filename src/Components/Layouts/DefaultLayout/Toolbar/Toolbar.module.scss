@@ -5,6 +5,7 @@
     position: fixed;
     bottom: calc(-1 * var(--height-toolbar));
     left: 0;
+    right: 0;
     z-index: 3;
     background-color: var(--white-color);
     opacity: 0;

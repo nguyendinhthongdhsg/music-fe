@@ -1,9 +1,10 @@
 .wrapper {
-    width: 100vw;
+    width: 100%;
     height: var(--height-header);
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     z-index: 3;
     border-bottom: 1px solid var(--border-color);
     background-color: var(--white-color);

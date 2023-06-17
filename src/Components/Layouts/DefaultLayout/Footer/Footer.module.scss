@@ -67,3 +67,31 @@
         }
     }
 }
+
+@media (max-width: 739px) {
+    .wrapper {
+
+        .content {
+
+            .contact {
+                margin: 0;
+
+                .email {
+                    a {
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                    }
+                }
+
+                .heading {
+                    margin-top: 20px;
+                    padding: 0;
+                    background-color: unset;
+                    margin-left: 0;
+                    text-align: start;
+                }
+            }
+        }
+    }
+}
