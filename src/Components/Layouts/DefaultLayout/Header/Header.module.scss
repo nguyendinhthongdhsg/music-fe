@@ -1,6 +1,5 @@
-
 .wrapper {
-    width: 100%;
+    width: 100vw;
     height: var(--height-header);
     position: fixed;
     top: 0;
@@ -8,11 +7,12 @@
     z-index: 3;
     border-bottom: 1px solid var(--border-color);
     background-color: var(--white-color);
+
     .nav {
         width: 80%;
         height: 100%;
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
         margin: 0 auto;
@@ -38,6 +38,7 @@
             .nav-item {
                 display: flex;
                 align-items: center;
+
                 .nav-link {
                     display: block;
                     padding: 0 8px;
@@ -65,7 +66,7 @@
                     border-bottom-left-radius: 6px;
                     cursor: pointer;
                 }
-    
+
                 .nav-search-input {
                     flex: 1;
                     height: 100%;
@@ -74,7 +75,7 @@
                     border-top-right-radius: 6px;
                     border-bottom-right-radius: 6px;
                     font-size: 1.4rem;
-    
+
                     &::placeholder {
                         position: relative;
                         bottom: -1px;
@@ -122,16 +123,21 @@
 
                     .item-music-info {
                         flex: 1;
-    
+                        overflow: hidden;
+
                         h4 {
+                            width: 100%;
                             font-size: 1.6rem;
                             font-weight: 500;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
                         }
-    
+
                         .item-music-name {
                             margin: 5px 0;
                         }
-    
+
                         .item-music-singer {
                             font-size: 1.4rem;
                             color: #7b7b7b;
@@ -146,27 +152,28 @@
 
                     .item-music-listen {
                         flex: 0.2;
+
                         p {
                             text-align: end;
                             color: #7b7b7b;
                             font-size: 1.4rem;
                         }
                     }
-    
+
                     .item-music-option {
                         margin: 0 1% 0 5%;
                         position: relative;
-    
+
                         .item-music-option-btn {
                             color: #7b7b7b;
                             padding: 6px;
                             cursor: pointer;
-    
+
                             i {
                                 font-size: 2.2rem;
                             }
                         }
-    
+
                         .item-music-option-list {
                             position: absolute;
                             top: 100%;
@@ -178,34 +185,34 @@
                             display: none;
                             flex-direction: column;
                             width: 200px;
-    
+
                             .item-music-option-item {
                                 padding: 12px 16px;
-    
+
                                 i {
                                     margin-right: 12px;
                                 }
-    
+
                                 &:hover {
                                     background-color: #cacaca;
                                 }
-    
+
                                 &:first-child {
                                     border-top-left-radius: 4px;
                                     border-top-right-radius: 4px;
                                 }
-    
+
                                 &:last-child {
                                     border-bottom-left-radius: 4px;
                                     border-bottom-right-radius: 4px;
                                 }
                             }
                         }
-    
-                        &:hover > .item-music-option-list {
+
+                        &:hover>.item-music-option-list {
                             display: flex;
                         }
-    
+
                         &:hover::after {
                             position: absolute;
                             top: 0;
@@ -214,23 +221,24 @@
                             height: 40px;
                             content: '';
                         }
-    
+
                         &:hover>.item-music-option-btn {
                             color: var(--black-color);
                         }
                     }
-    
+
                     &:last-child {
                         border-bottom: 1px solid var(--border-color);
                     }
                 }
             }
         }
-        
+
         .nav-admin {
             padding: 0 12px;
             position: relative;
             margin-right: 24px;
+
             &::after {
                 content: '';
                 width: 0.7px;
@@ -256,6 +264,127 @@
                 margin-left: 8px;
                 border-radius: 4px;
                 background-color: var(--grey-color);
+            }
+        }
+    }
+}
+
+// Tablet (max-width: 1023px)
+@media (max-width: 1023px) and (min-width: 740px) {
+    .wrapper {
+        height: calc(var(--height-header) * 2);
+
+        .nav {
+
+            .nav-logo,
+            .nav-list {
+                height: var(--height-header);
+            }
+
+            .nav-list {
+                padding: 0;
+            }
+
+            .nav-search-btn-1023 {
+                width: 100%;
+                display: flex;
+
+                .nav-search {
+                    padding: 0;
+                    height: calc(var(--height-header) - 22px);
+
+                    .nav-search-form {
+                        padding: 0;
+                    }
+                }
+
+                .nav-admin {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: 12px;
+                }
+
+                .nav-user {
+                    height: calc(var(--height-header) - 22px);
+                }
+            }
+        }
+    }
+}
+
+// Mobile (max-width: 739px)
+@media (max-width: 739px) {
+    .wrapper {
+
+        .nav {
+            width: 100%;
+            position: relative;
+            justify-content: space-between;
+            padding: 0 10%;
+
+            .nav-mouth-search-btn-mobile {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 0 10%;
+                background-color: var(--white-color);
+                border-bottom: 1px solid var(--border-color);
+
+                .nav-list {
+                    padding: 0;
+                    height: var(--height-header);
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                }
+
+                .nav-search-btn-1023 {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+
+                    .nav-mobile-btn {
+                        display: flex;
+                        margin: 20px 0;
+                        justify-content: flex-end;
+                    }
+
+                    .nav-search {
+                        padding: 0;
+                        height: var(--height-header);
+
+                        .nav-search-form {
+                            padding: 0;
+                            height: calc(var(--height-header) - 22px);
+
+                        }
+                    }
+
+                    .nav-admin {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-left: 12px;
+                    }
+
+                    .nav-user {
+                        height: calc(var(--height-header) - 22px);
+                    }
+                }
+            }
+
+            .nav-mouth-search {
+
+                .nav-mouth-search-btn {
+                    padding: 6px 0 6px 6px;
+
+                    i {
+                        font-size: 1.8rem;
+                    }
+                }
             }
         }
     }
