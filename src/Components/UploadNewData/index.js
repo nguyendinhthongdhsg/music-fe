@@ -121,6 +121,22 @@ function UploadNewData() {
         }, 3000);   
     }
 
+    function mouthListLink(event) {
+        while(!event.getAttribute('data'))
+            event = event.parentElement;
+        if(event) {
+            const list = document.querySelector('#nav-menu-list-link');
+            if(event.getAttribute('data') === 'open') {
+                list.style.bottom = '0';
+                event.setAttribute('data', 'close');
+            }
+            else if(event.getAttribute('data') === 'close') {
+                list.style.bottom = '-100%';
+                event.setAttribute('data', 'open');
+            }
+        }
+    }
+
     return (
         <main id="uploads" className={cx('wrapper')}>
             {console.log('Upload-New-Data')}
@@ -148,9 +164,18 @@ function UploadNewData() {
                         {
                             (isTabletOrMobile || isMobile) && 
                             <div className={cx('nav-menu-list')}>
-                                <button className={cx('nav-item-btn-show-list')}>
+                                <button className={cx('nav-item-btn-show-list')}
+                                    data='open'
+                                    onClick={(e) => mouthListLink(e.target)}
+                                >
                                     <i className="fa-solid fa-bars"></i>
                                 </button>
+                                <ul id="nav-menu-list-link" className={cx('nav-menu-list-link')}>
+                                    <li id='music' onClick={(e) => setOption(e.target.id)} className={cx('nav-item', option === 'music' && 'active')}>Đăng bài hát</li>
+                                    <li id='singer' onClick={(e) => setOption(e.target.id)} className={cx('nav-item', option === 'singer' && 'active')}>Thêm nghệ sĩ</li>
+                                    <li id='genre' onClick={(e) => setOption(e.target.id)} className={cx('nav-item', option === 'genre' && 'active')}>Thêm thể loại</li>
+                                    <li id='national' onClick={(e) => setOption(e.target.id)} className={cx('nav-item', option === 'national' && 'active')}>Thêm quốc gia</li>
+                                </ul>
                             </div>
                         }
                     </ul>
