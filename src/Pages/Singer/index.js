@@ -11,6 +11,8 @@ function Singer() {
     const [singerList, setSingerList] = useState();
 
     useEffect(() => {
+        const loading = document.querySelector('#loading');
+        loading.style.display = 'unset';
         const listPageBtn = document.querySelectorAll('#list-page-btn-link li');
         for(const pageBtn of listPageBtn) {
             if(pageBtn.style.color === 'var(--btn-link-page-color)')
@@ -20,7 +22,10 @@ function Singer() {
         }
         axios.get(URLAPI + '/singer')
             .then(res => res.data)
-            .then(res => setSingerList(res))
+            .then(res => {
+                loading.style.display = 'none';
+                setSingerList(res)
+            })
             .catch(() => console.log('ERROR'))
     }, []);
 

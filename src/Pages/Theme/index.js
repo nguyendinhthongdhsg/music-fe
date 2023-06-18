@@ -13,6 +13,8 @@ function Theme() {
     const [listNational, setListNational] = useState();
 
     useEffect(() => {
+        const loading = document.querySelector('#loading');
+        loading.style.display = 'unset';
         const listPageBtn = document.querySelectorAll('#list-page-btn-link li');
         for(const pageBtn of listPageBtn) {
             if(pageBtn.style.color === 'var(--btn-link-page-color)')
@@ -26,7 +28,10 @@ function Theme() {
                 setListGenre(res);
                 axios.get(URLAPI + '/national')
                     .then(res => res.data)
-                    .then(res => setListNational(res))
+                    .then(res => {
+                        loading.style.display = 'none';
+                        setListNational(res)
+                    })
                     .catch(() => console.log('ERROR'))
             })
             .catch(() => console.log('ERROR'))

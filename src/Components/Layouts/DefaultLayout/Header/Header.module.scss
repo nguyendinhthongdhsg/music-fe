@@ -298,6 +298,10 @@
                     .nav-search-form {
                         padding: 0;
                     }
+
+                    .nav-listMusic {
+                        padding: 0;
+                    }
                 }
 
                 .nav-admin {
@@ -362,6 +366,10 @@
                             padding: 0;
                             height: calc(var(--height-header) - 22px);
 
+                        }
+
+                        .nav-listMusic {
+                            padding: 0;
                         }
                     }
 

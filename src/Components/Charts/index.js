@@ -12,9 +12,12 @@ function Charts({ slug, string }) {
     const [listMusic, setListMusic] = useState();
 
     useEffect(() => {
+        const loading = document.querySelector('#loading');
+        loading.style.display = 'unset';
         axios.get(URLAPI + '/' + slug, { headers: { 'Content-Type': 'application/json' } })
             .then(res => res.data)
             .then(res => {
+                loading.style.display = 'none';
                 setListMusic(res);
             })
             .catch(() => console.log('Call API listMusic fail!'))

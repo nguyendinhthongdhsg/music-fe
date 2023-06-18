@@ -14,9 +14,14 @@ function Library() {
     const [listMusic, setListMusic] = useState([]);
 
     useEffect(() => {
+        const loading = document.querySelector('#loading');
+        loading.style.display = 'unset';
         axios.get(URLAPI + '/listMusic/item', { params: {listMusicJSON} })
             .then(res => res.data)
-            .then(res => setListMusic(res))
+            .then(res => {
+                loading.style.display = 'none';
+                setListMusic(res)
+            })
             .catch(() => console.log('ERROR'))
     }, []);
 

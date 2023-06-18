@@ -162,6 +162,15 @@
     }
 }
 
+@media (max-width: 1023px) and (min-width: 740px) {
+    .wrapper {
+
+        .content {
+            margin-top: calc(var(--height-header) * 2);
+        }
+    }
+}
+
 @media (max-width: 739px) {
     .wrapper {
 
