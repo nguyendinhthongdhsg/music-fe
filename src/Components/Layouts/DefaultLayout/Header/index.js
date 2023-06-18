@@ -14,7 +14,7 @@ function Header() {
     const isTabletOrMobile = useMediaQuery({
         query: "(max-width: 1023px) and (min-width: 740px)",
     });
-    const isMobile = useMediaQuery({ query: "(max-width: 739px)" });
+    const isMobile = useMediaQuery({ query: "(max-width: 740px)" });
 
     function search(event) {
         event.preventDefault();
@@ -242,7 +242,7 @@ function Header() {
                         </div>
                     </Fragment>
                 )}
-                {isTabletOrMobile && (
+                {isTabletOrMobile && !isMobile && (
                     <Fragment>
                         <ul id="list-page-btn-link" className={cx("nav-list")}>
                             <li id="Home-page-btn-link" className={cx("nav-item")}>

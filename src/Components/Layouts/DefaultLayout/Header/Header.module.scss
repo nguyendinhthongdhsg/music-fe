@@ -289,6 +289,7 @@
             .nav-search-btn-1023 {
                 width: 100%;
                 display: flex;
+                margin-bottom: 20px;
 
                 .nav-search {
                     padding: 0;
@@ -315,7 +316,7 @@
 }
 
 // Mobile (max-width: 739px)
-@media (max-width: 739px) {
+@media (max-width: 740px) {
     .wrapper {
 
         .nav {

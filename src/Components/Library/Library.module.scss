@@ -162,3 +162,43 @@
     }
 }
 
+@media (max-width: 739px) {
+    .wrapper {
+
+        .content {
+
+            .music-local {
+
+                .list-music {
+
+                    .item-music {
+    
+                        .item-music-index {
+                            flex: 0.2;
+                            margin-left: 0;
+                        }
+    
+                        .item-music-info {
+                            overflow: hidden;
+    
+                            h4 {
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+                        }
+                        
+                        .item-music-listen {
+                            display: none;
+                        }
+    
+                        .item-music-option {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

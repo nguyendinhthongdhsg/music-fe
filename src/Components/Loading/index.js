@@ -9,17 +9,7 @@ function Loading() {
         <div id="loading" className={cx('wrapper')}>
             {console.log('Loading')}
             <div className={cx('content')}>
-                <div className={cx("loading")}>
-                    <div className={cx("loading-text")}>
-                        <span className={cx("loading-text-words")}>L</span>
-                        <span className={cx("loading-text-words")}>O</span>
-                        <span className={cx("loading-text-words")}>A</span>
-                        <span className={cx("loading-text-words")}>D</span>
-                        <span className={cx("loading-text-words")}>I</span>
-                        <span className={cx("loading-text-words")}>N</span>
-                        <span className={cx("loading-text-words")}>G</span>
-                    </div>
-                </div>
+                <div className={cx('loader')}></div>
             </div>
         </div>
     )
