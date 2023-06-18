@@ -59,7 +59,7 @@
         }
 
         .form-content {
-            margin-top: 40px;
+            margin: 40px 0;
 
             .form-heading {
                 font-size: 2rem;
@@ -134,4 +134,8 @@
             }
         }
     }
+}
+
+@media (max-width: 1023px) {
+    
 }

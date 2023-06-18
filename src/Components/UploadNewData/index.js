@@ -1,8 +1,9 @@
 import classNames from "classnames/bind";
 import style from './UploadNewData.module.scss';
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useMediaQuery } from "react-responsive";
 import URLAPI from '../../config/URLAPI';
 
 const cx = classNames.bind(style);
@@ -10,6 +11,10 @@ const cx = classNames.bind(style);
 function UploadNewData() {
 
     const [option, setOption] = useState('music');
+    const isTabletOrMobile = useMediaQuery({
+        query: "(max-width: 1023px) and (min-width: 740px)",
+    });
+    const isMobile = useMediaQuery({ query: "(max-width: 740px)" });
 
     function selectFileMusic(event) {
         const nameFileUpload = document.querySelector('#name-file-upload');
@@ -131,10 +136,23 @@ function UploadNewData() {
                                 Quay lại
                             </Link>
                         </li>
-                        <li id='music' onClick={(e) => setOption(e.target.id)} className={cx('nav-item', option === 'music' && 'active')}>Đăng bài hát</li>
-                        <li id='singer' onClick={(e) => setOption(e.target.id)} className={cx('nav-item', option === 'singer' && 'active')}>Thêm nghệ sĩ</li>
-                        <li id='genre' onClick={(e) => setOption(e.target.id)} className={cx('nav-item', option === 'genre' && 'active')}>Thêm thể loại</li>
-                        <li id='national' onClick={(e) => setOption(e.target.id)} className={cx('nav-item', option === 'national' && 'active')}>Thêm quốc gia</li>
+                        {
+                            !isTabletOrMobile && !isMobile  &&
+                            <Fragment>
+                                <li id='music' onClick={(e) => setOption(e.target.id)} className={cx('nav-item', option === 'music' && 'active')}>Đăng bài hát</li>
+                                <li id='singer' onClick={(e) => setOption(e.target.id)} className={cx('nav-item', option === 'singer' && 'active')}>Thêm nghệ sĩ</li>
+                                <li id='genre' onClick={(e) => setOption(e.target.id)} className={cx('nav-item', option === 'genre' && 'active')}>Thêm thể loại</li>
+                                <li id='national' onClick={(e) => setOption(e.target.id)} className={cx('nav-item', option === 'national' && 'active')}>Thêm quốc gia</li>
+                            </Fragment>
+                        }
+                        {
+                            (isTabletOrMobile || isMobile) && 
+                            <div className={cx('nav-menu-list')}>
+                                <button className={cx('nav-item-btn-show-list')}>
+                                    <i className="fa-solid fa-bars"></i>
+                                </button>
+                            </div>
+                        }
                     </ul>
                 </nav>
                 {
