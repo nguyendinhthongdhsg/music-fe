@@ -79,11 +79,11 @@ function Toolbar() {
     return (
         <div id="tool-bar-wrapper" className={cx('wrapper')}>
             { console.log('Tool-bar') }
-            <audio id='tool-source' className={cx('tool-source')} src='' controls
+            <audio id='tool-source' className={cx('tool-source')} src=''
                 type="audio/mpeg"
                 onTimeUpdate = {(e) => handleLineUpdate(e.target)}
                 onLoadedMetadata={(e) => setTimeDuration(e.target)}
-            />  
+            ></audio>  
             <nav className={cx('player-controls')}>
                 <div id="player-controls-left" className={cx('player-controls-left')}>
                     <div className={cx('tool-info')}>
