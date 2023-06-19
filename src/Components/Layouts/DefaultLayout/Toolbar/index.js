@@ -79,7 +79,7 @@ function Toolbar() {
     return (
         <div id="tool-bar-wrapper" className={cx('wrapper')}>
             { console.log('Tool-bar') }
-            <audio id='tool-source' className={cx('tool-source')} src='' controls autoPlay
+            <audio id='tool-source' className={cx('tool-source')} src='' controls
                 type="audio/mpeg"
                 onTimeUpdate = {(e) => handleLineUpdate(e.target)}
                 onLoadedMetadata={(e) => setTimeDuration(e.target)}
