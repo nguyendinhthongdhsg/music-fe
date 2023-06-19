@@ -178,3 +178,18 @@
         }
     }
 }
+
+@media (max-width: 1023px) {
+    .wrapper {
+
+        .player-controls {
+
+            .player-controls-left {
+                display: none;
+            }
+            .player-controls-right {
+                display: none;
+            }
+        }
+    }
+}

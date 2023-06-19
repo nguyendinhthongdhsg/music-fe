@@ -284,6 +284,16 @@
 
             .nav-list {
                 padding: 0;
+
+                .nav-item {
+
+                    .nav-link {
+
+                        &:last-child {
+                            padding-right: 0;
+                        }
+                    }
+                }
             }
 
             .nav-search-btn-1023 {
@@ -345,6 +355,15 @@
                     height: var(--height-header);
                     flex-wrap: wrap;
                     justify-content: flex-start;
+                    .nav-item {
+
+                        .nav-link {
+    
+                            &:first-child{
+                                padding-left: 0;
+                            }
+                        }
+                    }
                 }
 
                 .nav-search-btn-1023 {

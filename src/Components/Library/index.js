@@ -22,7 +22,10 @@ function Library() {
                 loading.style.display = 'none';
                 setListMusic(res)
             })
-            .catch(() => console.log('ERROR'))
+            .catch(() => {
+                loading.style.display = 'none';
+                console.log('ERROR')
+            })
     }, []);
 
     function handlerCallAPIMusic(event, itemMusic) {
