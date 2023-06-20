@@ -220,7 +220,7 @@
                             right: -5px;
                             width: 60px;
                             height: 40px;
-                            content: '';
+                            content: "";
                         }
 
                         &:hover>.item-music-option-btn {
@@ -241,7 +241,7 @@
             margin-right: 24px;
 
             &::after {
-                content: '';
+                content: "";
                 width: 0.7px;
                 height: calc(var(--height-header) - 30px);
                 position: absolute;
@@ -260,6 +260,7 @@
                 height: 100%;
                 width: 90px;
                 font-size: 1.4rem;
+                color: var(--black-color);
                 cursor: pointer;
                 padding: 0 8px;
                 margin-left: 8px;
@@ -286,9 +287,7 @@
                 padding: 0;
 
                 .nav-item {
-
                     .nav-link {
-
                         &:last-child {
                             padding-right: 0;
                         }
@@ -332,7 +331,6 @@
 // Mobile (max-width: 739px)
 @media (max-width: 740px) {
     .wrapper {
-
         .nav {
             width: 100%;
             position: relative;
@@ -355,11 +353,10 @@
                     height: var(--height-header);
                     flex-wrap: wrap;
                     justify-content: flex-start;
-                    .nav-item {
 
+                    .nav-item {
                         .nav-link {
-    
-                            &:first-child{
+                            &:first-child {
                                 padding-left: 0;
                             }
                         }
@@ -384,7 +381,6 @@
                         .nav-search-form {
                             padding: 0;
                             height: calc(var(--height-header) - 22px);
-
                         }
 
                         .nav-listMusic {
@@ -406,12 +402,12 @@
             }
 
             .nav-mouth-search {
-
                 .nav-mouth-search-btn {
                     padding: 6px 0 6px 6px;
 
                     i {
                         font-size: 2rem;
+                        color: var(--black-color);
                     }
                 }
             }
